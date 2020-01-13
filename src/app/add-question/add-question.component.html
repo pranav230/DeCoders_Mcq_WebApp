@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 align="center">ADD QUESTION</h2>
+            <form [formGroup]="form" (submit)=onSaveQuestion()>
+                <div class="form-group">
+                    <!-- <input type="text" class="form-control" id="teamName" formControlName="teamName" placeholder="TEAM NAME"> -->
+                    <textarea name="question" class="form-control" cols="30" rows="10" formControlName="question" placeholder="QUESTION"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="option1" placeholder="OPTION 2" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="option2" placeholder="OPTION 2" required>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="email" class="form-control" formControlName="option3" placeholder="OPTION 3" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="option4" placeholder="OPTION 4" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="correctAns" placeholder="CORRECT ANSWER" required>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary">ADD QUESTION</button>
+            </form>
+        </div>
+    </div>
+</div>
