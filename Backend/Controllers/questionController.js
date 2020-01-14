@@ -27,4 +27,16 @@ router.post('', (req, res, err) => {
 
 });
 
+router.get('', (req, res, next) => {
+
+    questionSchema.find().then(result => {
+        res.status(200).json({
+
+            status: "success",
+            data: result
+
+        })
+    })
+})
+
 module.exports = router;

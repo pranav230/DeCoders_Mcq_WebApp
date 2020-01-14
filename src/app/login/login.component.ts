@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import {Router} from "@angular/router"
 
 import {LoginService } from '../Services/login.service'
 
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(public loginService:LoginService) { }
+  constructor(public loginService:LoginService,public router:Router) { }
 
   ngOnInit() {
 
@@ -54,9 +55,10 @@ export class LoginComponent implements OnInit {
       mobile2:this.form.controls.mobile2.value
     }
 
+
     console.log(teamData);
     this.loginService.addTeamData(teamData);
-
+    this.router.navigate(['/home']);
 
   }
 

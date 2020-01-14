@@ -1,0 +1,36 @@
+<div class="container">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <textarea class="form-control" rows="10">{{questionScreen?.question}}</textarea>
+
+            </div>
+            <div class="form-check col-12">
+                <input class="form-check-input" name="option" type="radio" id="option11" value="option1">
+                <label class="form-check-label" for="option11">
+                    {{questionScreen?.option1}}            
+                </label>
+            </div>
+            <div class="form-check col-12">
+                <input class="form-check-input" name="option" type="radio" id="option2" value="option2">
+                <label class="form-check-label" for="option2">
+                    {{questionScreen?.option2}}            
+                </label>
+            </div>
+            <div class="form-check col-12">
+                <input class="form-check-input" name="option" type="radio" id="option3" value="option3">
+                <label class="form-check-label" for="option2">
+                    {{questionScreen?.option3}}            
+                </label>
+            </div>
+            <div class="form-check col-12">
+                <input class="form-check-input" name="option" type="radio" id="option4" value="option4">
+                <label class="form-check-label" for="option4">
+                    {{questionScreen?.option4}}            
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)=getPreviousQuestion()>PREVIOUS</button>
+        <button class="btn btn-primary" (click)=getNextQuestion()>NEXT</button>
+    </form>
+</div>
