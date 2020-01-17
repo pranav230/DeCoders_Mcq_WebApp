@@ -10,6 +10,7 @@ const teamInfoSchema = mongoose.Schema({
     usn2: { type: String },
     email2: { type: String },
     mobile2: { type: String },
+    score: { type: String, default: null }
 });
 
 module.exports = mongoose.model("teamInfo", teamInfoSchema);

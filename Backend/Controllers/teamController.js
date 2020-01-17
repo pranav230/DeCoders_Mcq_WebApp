@@ -19,14 +19,37 @@ router.post('', (req, res, err) => {
         name2: req.body.name2,
         usn2: req.body.usn2,
         email2: req.body.email2,
-        mobile2: req.body.mobile2
+        mobile2: req.body.mobile2,
+        score: 0
     });
 
     newTeamInfo.save().then(addedTeamData => {
         res.status(201).json({
-            message: "success"
+            message: "success",
+            teamID: addedTeamData._id
         })
     })
+});
+
+router.put('', (req, res, err) => {
+    console.log("inside score update", req.body);
+    teamInfoSchema.findByIdAndUpdate(req.body.teamID, {
+            $set: { score: req.body.score }
+        }, {
+            new: true
+        },
+        function(err, updatedScore) {
+            if (err) {
+                res.send("Error updating imagePath");
+            } else {
+                res.json({
+                    message: "success",
+                    data: updatedScore
+                })
+            }
+        }
+    )
+
 })
 
 module.exports = router;
