@@ -109,6 +109,9 @@ export class HomeComponent implements OnInit {
                 {
                   this.score +=4;
                 }
+                else if(el.ans == null){
+                  this.score +=0;
+                }
                 else{
                   this.score -=1;
                 }
@@ -161,10 +164,6 @@ export class HomeComponent implements OnInit {
   
       //time left for the timer to terminate
       var timeLeft = countDownTime - now;
-      
-      if(document.location.href === "http://localhost:4200/home"){
-        document.getElementById("time_left").innerHTML="Time Left:" + timeLeft;
-      }
 
       var min = Math.floor((timeLeft % (1000*60*60)) / (1000*60));
       var sec = Math.floor((timeLeft % (1000*60)) / 1000);
@@ -177,7 +176,7 @@ export class HomeComponent implements OnInit {
       if (timeLeft < 0) {
         clearInterval(x);
         document.getElementById("timer_content").innerHTML = "Finished";
-        document.getElementById("time_left").innerHTML = "EXPIRED";  
+        // document.getElementById("time_left").innerHTML = "EXPIRED";  
           questionInfo.forEach(element => {
             answerInfo.forEach(el => {
                 if(element._id === el.ansID)
@@ -185,6 +184,9 @@ export class HomeComponent implements OnInit {
                   if(element.correctAns == el.ans)
                   {
                     score +=4;
+                  }
+                  else if(el.ans == null){
+                    score +=0;
                   }
                   else{
                     score -=1;
