@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">QUESTIONS</h1> 
+<h1 style="text-align: center;">QUESTIONS {{i+1}}</h1> 
 <div class="container">
     <form [formGroup]="form">
         <div class="form-row">
@@ -7,25 +7,25 @@
 
             </div>
             <div class="form-check col-12">
-                <input class="form-check-input" name="option" formControlName="option" type="radio" id="option11" value='1'>
+                <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option11" value='1' checked>
                 <label class="form-check-label" for="option11">
                     {{questionScreen?.option1}}            
                 </label>
             </div>
             <div class="form-check col-12">
-                <input class="form-check-input" name="option" formControlName="option" type="radio" id="option2" value='2'>
+                <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option2" value='2'>
                 <label class="form-check-label" for="option2">
                     {{questionScreen?.option2}}            
                 </label>
             </div>
             <div class="form-check col-12">
-                <input class="form-check-input" name="option" formControlName="option" type="radio" id="option3" value='3'>
+                <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option3" value='3'>
                 <label class="form-check-label" for="option3">
                     {{questionScreen?.option3}}            
                 </label>
             </div>
             <div class="form-check col-12">
-                <input class="form-check-input" name="option" formControlName="option" type="radio" id="option4" value='4'>
+                <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option4" value='4'>
                 <label class="form-check-label" for="option4">
                     {{questionScreen?.option4}}            
                 </label>

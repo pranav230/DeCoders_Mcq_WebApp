@@ -6,7 +6,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/DeCoders');
+// mongoose.connect('mongodb://localhost:27017/DeCoders');
 
 const questionSchema = require('../models/question');
 

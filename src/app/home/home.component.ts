@@ -50,17 +50,21 @@ export class HomeComponent implements OnInit {
   }
 
   getNextQuestion(questionID:string){
-      
+
+      // console.log("answer1",this.answers[0]);
        this.i++;
+      // console.log("answer2",this.answers[index],this.i);
        if(this.i==this.questions.length)
         {
           this.i=0;
         }
+        
        this.questionScreen = this.questions[this.i];
         const answer ={
           ansID:questionID,
           ans:this.form.controls.option.value
         }
+      
       console.log(answer);
       if(!this.answers.length)
           this.answers.push(answer);
@@ -81,7 +85,15 @@ export class HomeComponent implements OnInit {
       }else{
         this.flag=1;
       }
-       this.form.controls.option.value=0;
+
+      if(this.answers[this.i])
+      {
+        this.form.controls.option.reset(this.answers[this.i].ans);
+      }else{
+        this.form.controls.option.reset(null);
+
+      }
+      
         console.log("qwerty",this.answers);
   }
 
@@ -115,6 +127,14 @@ export class HomeComponent implements OnInit {
       this.i = this.questions.length-1;
     }
     this.questionScreen = this.questions[this.i];
+
+    if(this.answers[this.i])
+      {
+        this.form.controls.option.reset(this.answers[this.i].ans);
+      }else{
+        this.form.controls.option.reset(null);
+
+      }
    
   }
 
