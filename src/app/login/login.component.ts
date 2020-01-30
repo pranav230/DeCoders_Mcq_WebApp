@@ -29,13 +29,13 @@ export class LoginComponent implements OnInit {
       mobile1: new FormControl(null,{validators:[Validators.required]
       }),
 
-      name2: new FormControl(null,{validators:[Validators.required]
+      name2: new FormControl(null,{validators:[]
       }),
-      usn2: new FormControl(null,{validators:[Validators.required]
+      usn2: new FormControl(null,{validators:[]
       }),
-      email2: new FormControl(null,{validators:[Validators.required]
+      email2: new FormControl(null,{validators:[]
       }),
-      mobile2: new FormControl(null,{validators:[Validators.required]
+      mobile2: new FormControl(null,{validators:[]
       }),
 
     });
@@ -43,6 +43,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSaveStudentData(){
+
+
+    if(!this.form.valid)
+    {
+      alert("ENTER DATA CORRECTLY");
+      return;
+    }
 
     const teamData={
       teamName:this.form.controls.teamName.value,
