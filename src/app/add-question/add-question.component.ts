@@ -46,7 +46,4 @@ export class AddQuestionComponent implements OnInit {
     console.log(questionData);
     this.questionService.addQuestionData(questionData);
   }
-
-  
-
 }

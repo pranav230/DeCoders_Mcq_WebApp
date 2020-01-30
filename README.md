@@ -1,4 +1,4 @@
-# ReverseCoding
+# Mcq_WebApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
 
@@ -21,6 +21,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Connecting to mongo database
+
+Run `mongod --dbpath ./Backend/monogo-data/` to connect to the monogo database
+
+## Running the server
+
+Run `node server.js`
 
 ## Further help
 
