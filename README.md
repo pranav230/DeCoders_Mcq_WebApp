@@ -28,7 +28,7 @@ Run `mongod --dbpath ./Backend/monogo-data/` to connect to the monogo database
 
 ## Running the server
 
-Run `node server.js`
+Run `node ./Backend/server.js`
 
 ## Further help
 
