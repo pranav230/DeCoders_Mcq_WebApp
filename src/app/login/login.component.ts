@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
     });
 
   }
+
   onSaveStudentData(){
 
     const teamData={
@@ -59,7 +60,6 @@ export class LoginComponent implements OnInit {
     console.log(teamData);
     this.loginService.addTeamData(teamData);
     this.router.navigate(['/rules']);
-
   }
 
 

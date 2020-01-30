@@ -5,8 +5,10 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 const mongoose = require('mongoose');
 
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/DeCoders');
+
 const teamInfoSchema = require('../models/teamInfo');
-mongoose.connect('mongodb://localhost/Decoders');
 
 router.post('', (req, res, err) => {
     console.log(req.body);

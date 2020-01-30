@@ -20,7 +20,6 @@ export class LoginService {
       {
           alert("LOGIN SUCCESSFUL");
           localStorage.setItem("teamID",responseData.teamID);
-
       }
     })
   }
@@ -33,11 +32,11 @@ export class LoginService {
       score:Score
     }
     
-    this.http.put("http://localhost:1025/teamInfo",scoreInfo).subscribe(responseData=>{
+    this.http.put("http://localhost:1025/teamInfo",scoreInfo).subscribe(responseData =>{
      console.log("updated score",responseData);
      if(responseData["message"]=="success")
      {
-        alert("THANK FOR PARTICIPATING IN REVERSE CODING");
+        this.router.navigate(['/result']);
      }
     })
   }

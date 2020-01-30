@@ -13,6 +13,7 @@ import {LoginService } from '../Services/login.service'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   form: FormGroup;
@@ -45,13 +46,9 @@ export class HomeComponent implements OnInit {
            this.timer();
         
       })
-
-
     });
-
-    
-
   }
+
   getNextQuestion(questionID:string){
       
        this.i++;
@@ -84,8 +81,8 @@ export class HomeComponent implements OnInit {
       }else{
         this.flag=1;
       }
-       
-      // console.log(this.answers);
+       this.form.controls.option.value=0;
+        console.log("qwerty",this.answers);
   }
 
 
@@ -123,9 +120,10 @@ export class HomeComponent implements OnInit {
 
   timer(){
     console.log("in timer function1",this.questions);
+    
     //duration of test in minutes
     //added 0.2 for processing delay correction
-    var durationOfTest = 0.1 + 0.02;
+    var durationOfTest = 30 + 0.02;
   
     var countDownTime = new Date().getTime() + durationOfTest*60*1000;
     var questionInfo = this.questions;
@@ -133,21 +131,28 @@ export class HomeComponent implements OnInit {
     var score = 0;
     var logService = this.loginService;
     var router = this.router;
+    
     // Update the count down every 1 second
     var x = setInterval(function() {
-      console.log("in timer function2",questionInfo);
-      console.log("222",questionInfo);
+      // console.log("in timer function2",questionInfo);
+      //console.log("222",questionInfo);
+      
       var now = new Date().getTime();
   
       //time left for the timer to terminate
       var timeLeft = countDownTime - now;
-      document.getElementById("time_left").innerHTML="Time Left:" + timeLeft;
-  
+      
+      if(document.location.href === "http://localhost:4200/home"){
+        document.getElementById("time_left").innerHTML="Time Left:" + timeLeft;
+      }
+
       var min = Math.floor((timeLeft % (1000*60*60)) / (1000*60));
       var sec = Math.floor((timeLeft % (1000*60)) / 1000);
-  
-      document.getElementById("timer_content").innerHTML = min + ":" + sec.toString().padStart(2,"0");
-    
+      
+      if(document.location.href === "http://localhost:4200/home"){
+        document.getElementById("timer_content").innerHTML = min + ":" + sec.toString().padStart(2,"0");
+      }
+      
       // If the count down is finished, write some text
       if (timeLeft < 0) {
         clearInterval(x);
@@ -177,7 +182,4 @@ export class HomeComponent implements OnInit {
     // console.log("333",this.questions);
 
   }
-
-
-
 }

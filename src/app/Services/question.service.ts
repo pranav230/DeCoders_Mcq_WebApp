@@ -31,8 +31,10 @@ export class QuestionService {
     console.log("service start ");
 
         this.http.get<{message:string,question:any}>("http://localhost:1025/question").subscribe(questionDetails => {
+        
         // this.product = productDetails.product 
         // this.productdetailsUpdated.next(this.product);
+
         this.questions = questionDetails["data"];
         this.questionsUpdated.next([...this.questions])
         console.log("service ",this.questions);
@@ -43,7 +45,5 @@ export class QuestionService {
   getQuestionUpdateListener(){
     return this.questionsUpdated.asObservable();
   }
-
-
 
 }
