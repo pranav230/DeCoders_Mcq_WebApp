@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 
     console.log(teamData);
     this.loginService.addTeamData(teamData);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/rules']);
 
   }
 

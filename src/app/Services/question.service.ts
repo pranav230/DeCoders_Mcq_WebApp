@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
-import { Subject } from "rxjs";
+import { Subject, timer } from "rxjs";
 import { Router } from "@angular/router";
+import {LoginService} from "./login.service"
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,10 @@ export class QuestionService {
 
   private questionsUpdated = new Subject<any>();
   private questions:any[] = [];
+  public score:number=0;
 
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient,private router:Router,public loginService :LoginService) { }
 
   addQuestionData(questionData:any){
     console.log(questionData)
@@ -41,5 +43,7 @@ export class QuestionService {
   getQuestionUpdateListener(){
     return this.questionsUpdated.asObservable();
   }
+
+
 
 }

@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { HomeComponent } from './home/home.component';
+import { RulesComponent } from './rules/rules.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AddQuestionComponent,
-    HomeComponent
+    HomeComponent,
+    RulesComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

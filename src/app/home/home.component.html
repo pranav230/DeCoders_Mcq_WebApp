@@ -1,7 +1,7 @@
 <div class="container">
     <form [formGroup]="form">
         <div class="form-row">
-            <div class="form-group col-12">
+            <div class="form-group col-10">
                 <textarea class="form-control" rows="10">{{questionScreen?.question}}</textarea>
 
             </div>
@@ -35,4 +35,15 @@
         <button class="btn btn-primary" (click)=calculateScore()>FINISH TEST</button>
 
     </form>
+
+
+
+    <div style="background-color: white;">
+		<div class="timer">
+			<p id="timer_content">Timer for now</p>
+			<p id="time_left"> Timer not started yet</p>
+        </div>
+    </div>
+    <button class="btn" (click)="timer()"></button>
+
 </div>
