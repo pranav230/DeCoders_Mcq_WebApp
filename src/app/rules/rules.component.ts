@@ -14,7 +14,5 @@ export class RulesComponent implements OnInit {
   ngOnInit() {
   }
 
-  startTimer(){
-    // this.questionService.timer();
-  }
+
 }

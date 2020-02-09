@@ -18,7 +18,6 @@ export class LoginService {
       console.log("response team info",responseData);
       if(responseData["message"] == "success")
       {
-          alert("LOGIN SUCCESSFUL");
           localStorage.setItem("teamID",responseData.teamID);
       }
     })
