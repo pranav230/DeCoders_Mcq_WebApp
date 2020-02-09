@@ -1,49 +1,72 @@
-<h1 style="text-align: center;">QUESTIONS {{i+1}}</h1> 
-<div class="container">
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-10">
+        <h3 class="pt-4 " style="text-align: center;">QUESTION {{i+1}}</h3> 
+        
+        </div>
+        
+        <div class="col-2">
+            <div class="col-2" style="background-color: white;">
+                <div class="timer">
+                    <p class="display-4" id="timer_content">Timer</p>
+                    <!-- <p id="time_left"> Timer not started yet</p> -->
+                </div>
+            </div>
+        </div>
+            
+</div>
+
+
     <form [formGroup]="form">
         <div class="form-row">
-            <div class="form-group col-10">
-                <textarea class="form-control" rows="10">{{questionScreen?.question}}</textarea>
+            <div class="form-group offset-1 col-10 mb-5">
+                <textarea class="form-control" rows="10" style="height: 50vh;">Q. {{questionScreen?.question}}</textarea>
 
             </div>
-            <div class="form-check col-12">
+            <div class="form-check offset-1 col-11">
                 <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option11" value='1' checked>
                 <label class="form-check-label" for="option11">
                     {{questionScreen?.option1}}            
                 </label>
             </div>
-            <div class="form-check col-12">
+            <div class="form-check offset-1 col-11">
                 <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option2" value='2'>
                 <label class="form-check-label" for="option2">
                     {{questionScreen?.option2}}            
                 </label>
             </div>
-            <div class="form-check col-12">
+            <div class="form-check offset-1 col-11">
                 <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option3" value='3'>
                 <label class="form-check-label" for="option3">
                     {{questionScreen?.option3}}            
                 </label>
             </div>
-            <div class="form-check col-12">
+            <div class="form-check offset-1 col-11">
                 <input class="form-check-input" name="option" formControlName="option" type="radio" class="uncheck" id="option4" value='4'>
                 <label class="form-check-label" for="option4">
                     {{questionScreen?.option4}}            
                 </label>
             </div>
+         
         </div>
+
+<div class="row mt-5">
+    <div class="offset-1 col-6">
         <button class="btn btn-primary" (click)=getPreviousQuestion()>PREVIOUS</button>
-        <button class="btn btn-primary mx-4" (click)=getNextQuestion(questionScreen?._id)>NEXT</button>
-        <button class="btn btn-primary" (click)=calculateScore()>FINISH TEST</button>
+        <button class="btn btn-primary" (click)=unanswerQuestion(questionScreen?._id)>UNANSWER</button>
+        <button class="btn btn-primary " (click)=getNextQuestion(questionScreen?._id)>NEXT</button>
+    </div>
+    <div class="offset-3 col-2">
+        <button class="btn btn-primary" align="right" (click)=calculateScore()>FINISH TEST</button>
+    </div>
+</div>
+      
 
     </form>
 
 
 
-    <div style="background-color: white;">
-		<div class="timer">
-			<p class="display-4" id="timer_content">Timer for now</p>
-			<!-- <p id="time_left"> Timer not started yet</p> -->
-        </div>
-    </div>
+
 
 </div>

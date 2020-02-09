@@ -1,65 +1,69 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <h2 align="center">TEAM DETAILS</h2>
-            <form [formGroup]="form" (submit)=onSaveStudentData()>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="teamName" formControlName="teamName" placeholder="TEAM NAME">
-                </div>
-                <h3 align="center">STUDENT 1 DETAILS</h3>
-                <div class="form-row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name1" formControlName="name1" placeholder="NAME" required>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="usn1" formControlName="usn1" placeholder="USN" required>
-                        </div>
-                    </div>
+        <div class="offset-1 col-10" >
 
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email1" formControlName="email1" placeholder="EMAIL ADDRESS" required>
+        <div class="shadow p-5" style="margin-top:225px;">
+                <h2 align="center">TEAM DETAILS</h2>
+                <form [formGroup]="form" (submit)=onSaveStudentData()>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="teamName" formControlName="teamName" placeholder="TEAM NAME">
+                        <!-- <small >ENTER TEAM NAME</small> -->
+                    </div>
+                    <h3 align="center">STUDENT 1 DETAILS</h3>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name1" formControlName="name1" placeholder="NAME" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="usn1" formControlName="usn1" placeholder="USN" required>
+                            </div>
+                        </div>
+    
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email1" formControlName="email1" placeholder="EMAIL ADDRESS" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="mobile1" formControlName="mobile1" placeholder="MOBILE NUMBER" required>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="mobile1" formControlName="mobile1" placeholder="MOBILE NUMBER" required>
+    
+    
+    
+                    <h3 align="center">STUDENT 2 DETAILS</h3>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name2" formControlName="name2" placeholder="NAME">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="usn2" formControlName="usn2" placeholder="USN">
+                            </div>
+                        </div>
+    
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email2" formControlName="email2" placeholder="EMAIL ADDRESS">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="mobile2" formControlName="mobile2" placeholder="MOBILE NUMBER">
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-
-                <h3 align="center">STUDENT 2 DETAILS</h3>
-                <div class="form-row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name2" formControlName="name2" placeholder="NAME">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="usn2" formControlName="usn2" placeholder="USN">
-                        </div>
-                    </div>
-
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email2" formControlName="email2" placeholder="EMAIL ADDRESS">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="mobile2" formControlName="mobile2" placeholder="MOBILE NUMBER">
-                        </div>
-                    </div>
-                </div>
-                <!-- <a href="http://localhost:4200/rules" class="btn btn-primary" (click)=onSaveStudentData()>Submit</a> -->
-                <button type="submit" id="full" class="btn btn-primary">Submit</button>
-            </form>
+                    <!-- <a href="http://localhost:4200/rules" class="btn btn-primary" (click)=onSaveStudentData()>Submit</a> -->
+                    <button type="submit" id="full" class="btn btn-primary" style="width: 100%;font-weight: 900;letter-spacing: 7px;"><strong>SUBMIT</strong></button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

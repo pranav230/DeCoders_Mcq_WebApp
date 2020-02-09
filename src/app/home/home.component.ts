@@ -49,6 +49,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
+  unanswerQuestion(questionID:string){
+    console.log(questionID,this.i);
+      
+        this.form.controls.option.reset(this.answers[this.i].ans);
+        this.form.controls.option.reset(null);
+
+  }
   getNextQuestion(questionID:string){
 
       // console.log("answer1",this.answers[0]);
@@ -100,6 +108,9 @@ export class HomeComponent implements OnInit {
 
 
   calculateScore(){
+    var testSub = confirm("Are you sure you want to submit your test");
+    if(testSub==false)
+        return;
     console.log("calc func",this.questions)
       this.questions.forEach(element => {
           this.answers.forEach(el => {
