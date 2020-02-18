@@ -41,8 +41,7 @@ export class HomeComponent implements OnInit {
       this.questionScreen = this.questions[this.i];
 
       this.activeRoute.params.subscribe((params)=>{
-        console.log("param route",this.questions);
-        
+        console.log("param route",params,this.questions);
            this.timer();
         
       })
@@ -179,7 +178,7 @@ export class HomeComponent implements OnInit {
       var min = Math.floor((timeLeft % (1000*60*60)) / (1000*60));
       var sec = Math.floor((timeLeft % (1000*60)) / 1000);
       
-      if(document.location.href === "http://localhost:4200/home"){
+      if(document.location.href === "http://192.168.43.68:4200/home"){
         document.getElementById("timer_content").innerHTML = min + ":" + sec.toString().padStart(2,"0");
       }
       

@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/Decoders');
+// mongoose.connect('mongodb://192.168.43.68:27017/Decoders');
+
 
 const teamInfoSchema = require('../models/teamInfo');
 

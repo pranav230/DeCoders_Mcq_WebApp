@@ -11,10 +11,13 @@ export class LoginService {
   public teamID:string;
   constructor(private http:HttpClient,private router:Router) { }
 
-
+  public ip:string = "http://127.0.0.1";
   addTeamData(teamData:any){
     console.log(teamData)
-    this.http.post<{message:string,teamID:string}>("http://localhost:1025/teamInfo",teamData).subscribe(responseData =>{
+    // this.http.post<{message:string,teamID:string}>("http://localhost:1025/teamInfo",teamData).subscribe(responseData =>{
+      this.http.post<{message:string,teamID:string}>(this.ip + ":1025/teamInfo",teamData).subscribe(responseData =>{
+
+    console.log(responseData)
       console.log("response team info",responseData);
       if(responseData["message"] == "success")
       {
@@ -31,7 +34,7 @@ export class LoginService {
       score:Score
     }
     
-    this.http.put("http://localhost:1025/teamInfo",scoreInfo).subscribe(responseData =>{
+    this.http.put(this.ip +":1025/teamInfo",scoreInfo).subscribe(responseData =>{
      console.log("updated score",responseData);
      if(responseData["message"]=="success")
      {

@@ -5,5 +5,5 @@ const server = http.createServer(app);
 if (server) {
     console.log("Server is running on port ::", port);
 }
-
+// server.listen(port);
 server.listen(port);
