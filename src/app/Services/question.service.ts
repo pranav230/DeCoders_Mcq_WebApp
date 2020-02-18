@@ -12,7 +12,7 @@ export class QuestionService {
   private questionsUpdated = new Subject<any>();
   private questions:any[] = [];
   public score:number=0;
-  public ip:string = "http://192.168.43.68";
+  public ip:string = "http://localhost";
 
   constructor(private http:HttpClient,private router:Router,public loginService :LoginService) { }
 
