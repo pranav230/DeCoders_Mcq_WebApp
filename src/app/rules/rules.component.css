@@ -1,4 +1,15 @@
-ul li{
-    margin-bottom: 15px;
-    font-weight: 700;
+ul li {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.btn {
+  color: white;
+  background-color: #0f3460;
+  border-radius: 25px;
+  font-weight: 500;
+  width: 80%;
+  letter-spacing: 7px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
 }
